@@ -7,6 +7,7 @@ using SlothEnterprise.ProductApplication.Products;
 
 namespace SlothEnterprise.ProductApplication.CommandHandlers
 {
+    /// <summary> Submits SelectiveInvoiceDiscount to selective invoice microservice </summary>
     public class SubmitSelectiveInvoiceDiscountCommandHandler: 
         IRequestHandler<SubmitApplicationCommand<SelectiveInvoiceDiscount>, IApplicationSubmitResult>
     {

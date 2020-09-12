@@ -16,7 +16,7 @@ After refactoring adding new products will be much easier, because it can be don
 changing ProductApplicationService.
 
 2. No test coverage.
-Even if solution includes Tests project it doesn't provide any tests.
+Although solution includes Tests project it doesn't provide any tests.
 
 3. Mapping between ISellerCompanyData and CompanyDataRequest and similar relations
 can be implemented in separate class for better reusability. (for further improvement

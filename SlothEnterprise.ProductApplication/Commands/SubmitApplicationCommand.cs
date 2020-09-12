@@ -4,6 +4,7 @@ using SlothEnterprise.ProductApplication.Products;
 
 namespace SlothEnterprise.ProductApplication.Commands
 {
+    /// <summary> Command to submit application with certain product </summary>
     public class SubmitApplicationCommand<TProduct> : IRequest<IApplicationSubmitResult>
         where TProduct : IProduct
     {

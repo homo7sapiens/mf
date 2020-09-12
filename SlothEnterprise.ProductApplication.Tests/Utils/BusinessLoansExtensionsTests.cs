@@ -17,7 +17,7 @@ namespace SlothEnterprise.ProductApplication.Tests.Utils
         }
         
         [Test]
-        public void ToLoansRequest_Null_DoesntNotThrow()
+        public void ToLoansRequest_Null_DoesNotThrow()
         {
             var result = ((BusinessLoans)null).ToLoansRequest();
 

@@ -16,7 +16,7 @@ namespace SlothEnterprise.ProductApplication.Tests.Utils
         }
         
         [Test]
-        public void ToCompanyDataRequest_Null_DoesntNotThrow()
+        public void ToCompanyDataRequest_Null_DoesNotThrow()
         {
             var result = ((SellerCompanyData)null).ToCompanyDataRequest();
 

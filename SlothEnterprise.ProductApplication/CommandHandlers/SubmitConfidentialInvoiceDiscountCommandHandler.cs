@@ -1,7 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SlothEnterprise.External;
 using SlothEnterprise.External.V1;
 using SlothEnterprise.ProductApplication.Commands;
 using SlothEnterprise.ProductApplication.Products;
@@ -9,6 +8,7 @@ using SlothEnterprise.ProductApplication.Utils;
 
 namespace SlothEnterprise.ProductApplication.CommandHandlers
 {
+    /// <summary> Submits ConfidentialInvoiceDiscount to confidential invoice microservice </summary>
     public class SubmitConfidentialInvoiceDiscountCommandHandler: 
         IRequestHandler<SubmitApplicationCommand<ConfidentialInvoiceDiscount>, IApplicationSubmitResult>
     {

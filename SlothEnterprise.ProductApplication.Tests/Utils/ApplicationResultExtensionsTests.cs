@@ -16,7 +16,7 @@ namespace SlothEnterprise.ProductApplication.Tests.Utils
         }
         
         [Test]
-        public void ToApplicationSubmitResult_Null_DoesntNotThrow()
+        public void ToApplicationSubmitResult_Null_DoesNotThrow()
         {
             var result = ((ApplicationResultStub)null).ToApplicationSubmitResult();
 

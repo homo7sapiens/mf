@@ -8,6 +8,7 @@ using SlothEnterprise.ProductApplication.Utils;
 
 namespace SlothEnterprise.ProductApplication.CommandHandlers
 {
+    /// <summary> Submits BusinessLoans to business loans microservice </summary>
     public class SubmitBusinessLoansCommandHandler: 
         IRequestHandler<SubmitApplicationCommand<BusinessLoans>, IApplicationSubmitResult>
     {
