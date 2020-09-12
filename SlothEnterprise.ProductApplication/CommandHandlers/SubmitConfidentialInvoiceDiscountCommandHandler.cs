@@ -23,15 +23,12 @@ namespace SlothEnterprise.ProductApplication.CommandHandlers
         {
             var companyData = request.CompanyData;
             var product = request.Product;
-            
+
             var result = _confidentialInvoiceService.SubmitApplicationFor(
-                new CompanyDataRequest
-                {
-                    CompanyFounded = companyData.Founded,
-                    CompanyNumber = companyData.Number,
-                    CompanyName = companyData.Name,
-                    DirectorName = companyData.DirectorName
-                }, product.TotalLedgerNetworth, product.AdvancePercentage, product.VatRate);
+                companyData.ToCompanyDataRequest(), 
+                product.TotalLedgerNetworth, 
+                product.AdvancePercentage,
+                product.VatRate);
 
             return Task.FromResult(result.ToApplicationSubmitResult());
         }

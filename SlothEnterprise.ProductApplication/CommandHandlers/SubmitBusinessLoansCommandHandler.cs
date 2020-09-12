@@ -1,7 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SlothEnterprise.External;
 using SlothEnterprise.External.V1;
 using SlothEnterprise.ProductApplication.Commands;
 using SlothEnterprise.ProductApplication.Products;
@@ -24,17 +23,9 @@ namespace SlothEnterprise.ProductApplication.CommandHandlers
             var companyData = request.CompanyData;
             var product = request.Product;
             
-            var result = _businessLoansService.SubmitApplicationFor(new CompanyDataRequest
-            {
-                CompanyFounded = companyData.Founded,
-                CompanyNumber = companyData.Number,
-                CompanyName = companyData.Name,
-                DirectorName = companyData.DirectorName
-            }, new LoansRequest
-            {
-                InterestRatePerAnnum = product.InterestRatePerAnnum,
-                LoanAmount = product.LoanAmount
-            });
+            var result = _businessLoansService.SubmitApplicationFor(
+                companyData.ToCompanyDataRequest(), 
+                product.ToLoansRequest());
 
             return Task.FromResult(result.ToApplicationSubmitResult());
         }

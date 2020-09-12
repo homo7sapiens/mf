@@ -3,7 +3,7 @@ using SlothEnterprise.ProductApplication.Commands;
 
 namespace SlothEnterprise.ProductApplication.Utils
 {
-    public static class ApplicationResultUtils
+    public static class ApplicationResultExtensions
     {
         public static IApplicationSubmitResult ToApplicationSubmitResult(this IApplicationResult result)
         {
