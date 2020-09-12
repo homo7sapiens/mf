@@ -1,4 +1,8 @@
-﻿namespace SlothEnterprise.ProductApplication.Products
+﻿using MediatR;
+using SlothEnterprise.ProductApplication.Applications;
+using SlothEnterprise.ProductApplication.Commands;
+
+namespace SlothEnterprise.ProductApplication.Products
 {
     public class BusinessLoans : IProduct
     {
@@ -12,5 +16,10 @@
         /// Total available amount to withdraw
         /// </summary>
         public decimal LoanAmount { get; set; }
+        
+        public IRequest<IApplicationSubmitResult> ToSubmitCommand(ISellerCompanyData companyData)
+        {
+            return new SubmitApplicationCommand<BusinessLoans>(companyData, this);
+        }
     }
 }
