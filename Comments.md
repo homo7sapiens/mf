@@ -18,7 +18,7 @@ changing ProductApplicationService.
 2. No test coverage.
 Even if solution includes Tests project it doesn't provide any tests.
 
-3. Mapping between ISellerCompanyData and CompanyDataRequest and similar
+3. Mapping between ISellerCompanyData and CompanyDataRequest and similar relations
 can be implemented in separate class for better reusability. (for further improvement
 tools like automapper can be added).
 
@@ -29,15 +29,19 @@ public decimal VatRate { get; set; } = VatRates.UkVatRate;
 If application uses only UkVatRate it might be good to move VatRate outside of product to avoid data duplication 
 (and use it inside services that process product)
 If other VatRates possible the question will be: Is the VatRate really has default value?
-The questions hard to answer without domain experts so I keep that part unchanged.
+The questions are hard to answer without domain experts so I keep that part unchanged.
 
-5. SubmitApplicationFor() return type is just int which under hood is two separate things:
+5. SubmitApplicationFor() return type is just int which under the hood is two separate things:
 applicationIds and error codes. It might be good to separate it. But for the purpose of backward compatibility
 I leave it same for now.
 
 #Refactoring Plan
-1. It is good to cover exsisting functionality with tests before refactoring, so it will be easier to know
+1. It is good to cover existing functionality with tests before refactoring, so it will be easier to know
 whether refactoring broke something.
 2. Refactor products introducing commands and command handlers to fix Top 1 concern.
 Write tests prior to code where applicable(TDD).
 3. Refactor mappings between data models.
+
+#Further Improvements
+1. Create project with dependencies registration.
+2. Add tests that verifies that each command has related command handler.
